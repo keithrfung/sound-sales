@@ -37,7 +37,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 #Less and Sass
-gem 'less-rails-bootstrap'
+gem 'therubyracer'
 
 #Use sqlite 3 in development and test
 group :development, :test do

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'static_pages/home'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -58,5 +60,5 @@ Rails.application.routes.draw do
   get '/rails/info/properties' => "rails/info#properties"
   get '/rails/info/routes'     => "rails/info#routes"
   get '/rails/info'            => "rails/info#index"
-  get '/'                      => "rails/welcome#index"
+  get '/'                      => "static_pages#home"
 end

@@ -36,6 +36,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
+#Less and Sass
+gem 'less-rails-bootstrap'
+
 #Use sqlite 3 in development and test
 group :development, :test do
   # Use sqlite3 as the database for Active Record

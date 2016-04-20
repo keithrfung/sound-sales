@@ -12,4 +12,6 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap/dist/css/bootstrap
+ *= require startboostrap-sb-admin-2/dist/css/sb-admin-2
  */

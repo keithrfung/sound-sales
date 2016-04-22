@@ -12,10 +12,4 @@
  *
  *= require_tree .
  *= require_self
- *= require bootstrap/dist/css/bootstrap.min.css
- *= require startbootstrap-sb-admin-2/dist/css/sb-admin-2.css
- *= require startbootstrap-sb-admin-2/dist/css/timeline.css
- *= require morrisjs/morris.css
- *= require font-awesome/css/font-awesome.css
- *= require metisMenu/dist/metisMenu.min.css
  */

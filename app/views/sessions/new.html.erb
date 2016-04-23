@@ -53,8 +53,8 @@
                       <fieldset>
                         <%= form_for(:session, url: login_path) do |f| %>
 
-                          <%= f.label :Username %>
-                          <%= f.email_field :userName, class: 'form-control' %>
+                          <%= f.label :userName %>
+                          <%= f.text_field :userName, class: 'form-control' %>
 
                           <%= f.label :password %>
                           <%= f.password_field :password, class: 'form-control' %>

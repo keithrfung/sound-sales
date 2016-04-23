@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  get 'users/new'
 
+  #get 'users/new'
   #get 'static_pages/home'
   root                'static_pages#home'
   get 'dashboard'  => 'static_pages#home'
-  get 'login'      => 'static_pages#login'
+  #get 'login'      => 'static_pages#login' # Not used
+  get    'login'   => 'sessions#new'
+  post   'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
   resources :users
 
 

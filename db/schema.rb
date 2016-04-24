@@ -11,70 +11,67 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160423150632) do
+ActiveRecord::Schema.define(version: 20160424000833) do
 
   create_table "clients", force: true do |t|
-    t.integer  "clientId"
-    t.string   "firstName"
-    t.string   "lastName"
-    t.integer  "phoneNumber"
-    t.string   "addressLine1"
-    t.string   "addressLine2"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "phone"
+    t.string   "address_line_1"
+    t.string   "address_line_2"
     t.string   "city"
     t.string   "state"
     t.string   "country"
-    t.integer  "zipCode"
+    t.string   "zipcode"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "commissions", force: true do |t|
+    t.decimal  "amount"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "products", force: true do |t|
-    t.integer  "productId"
     t.string   "name"
     t.text     "description"
-    t.float    "price"
-    t.integer  "type"
-    t.float    "commissionRate"
+    t.decimal  "price"
+    t.decimal  "commission_rate"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "regions", force: true do |t|
-    t.integer  "regionId"
-    t.integer  "managerId"
     t.string   "name"
-    t.string   "state"
-    t.integer  "zipCode"
-    t.string   "country"
     t.string   "area"
     t.string   "city"
+    t.string   "state"
+    t.string   "zipcode"
+    t.string   "country"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "sales", force: true do |t|
-    t.integer  "salesId"
-    t.float    "tax"
-    t.datetime "saleDate"
-    t.integer  "sellerId"
-    t.integer  "buyerId"
-    t.string   "paymentType"
     t.integer  "quantity"
-    t.integer  "productId"
+    t.decimal  "subtotal"
+    t.decimal  "tax"
+    t.decimal  "total"
+    t.string   "payment_type"
+    t.datetime "sale_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
-    t.integer  "userId"
-    t.string   "firstName"
-    t.string   "lastName"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "username"
     t.string   "password"
-    t.integer  "statusId"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "password_digest"
-    t.string   "userName"
   end
 
 end

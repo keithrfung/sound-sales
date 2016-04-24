@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+  resources :users
+
+  resources :products
+
+  resources :commissions
+
+  resources :regions
+
+  resources :sales
+
+  resources :clients
+
   #get 'users/new'
   #get 'static_pages/home'
   root                'static_pages#home'

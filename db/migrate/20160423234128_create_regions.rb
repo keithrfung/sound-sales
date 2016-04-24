@@ -1,14 +1,12 @@
 class CreateRegions < ActiveRecord::Migration
   def change
     create_table :regions do |t|
-      t.integer :regionId
-      t.integer :managerId
       t.string :name
-      t.string :state
-      t.integer :zipCode
-      t.string :country
       t.string :area
       t.string :city
+      t.string :state
+      t.string :zipcode
+      t.string :country
 
       t.timestamps
     end

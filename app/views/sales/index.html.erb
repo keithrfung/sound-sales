@@ -1,4 +1,4 @@
-<h1>Listing sales</h1>
+<h1>Sales</h1>
 
 <table class="table">
   <thead>
@@ -22,9 +22,21 @@
         <td><%= sale.total %></td>
         <td><%= sale.payment_type %></td>
         <td><%= sale.sale_date %></td>
-        <td><%= link_to 'Show', sale %></td>
-        <td><%= link_to 'Edit', edit_sale_path(sale) %></td>
-        <td><%= link_to 'Destroy', sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         <td>
+          <%= link_to sale, class: 'btn btn-default btn-xs' do %>
+            <span class="glyphicon glyphicon-search"></span>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to edit_sale_path(sale), class: 'btn btn-default btn-xs' do %>
+            <span class="glyphicon glyphicon-pencil"></span>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to sale, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' do %>
+          <span class="glyphicon glyphicon-remove"></span>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +44,6 @@
 
 <br>
 
-<%= link_to 'New Sale', new_sale_path %>
+<%= link_to new_sale_path, class: 'btn btn-primary' do%>
+Add
+<% end %>

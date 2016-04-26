@@ -1,4 +1,4 @@
-<h1>Listing users</h1>
+<h1>Users</h1>
 
 <table class="table">
   <thead>
@@ -20,9 +20,21 @@
         <td><%= user.username %></td>
         <td><%= user.password %></td>
         <td><%= user.password_digest %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to user, class: 'btn btn-default btn-xs' do %>
+            <span class="glyphicon glyphicon-search"></span>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to edit_user_path(user), class: 'btn btn-default btn-xs' do %>
+            <span class="glyphicon glyphicon-pencil"></span>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to user, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' do %>
+          <span class="glyphicon glyphicon-remove"></span>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +42,6 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to new_user_path, class: 'btn btn-primary' do%>
+Add
+<% end %>

@@ -1,9 +1,7 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Amount:</strong>
   <%= @commission.amount %>
 </p>
 
-<%= link_to 'Edit', edit_commission_path(@commission) %> |
-<%= link_to 'Back', commissions_path %>
+<%= link_to 'Edit', edit_commission_path(@commission), class: "btn btn-primary" %>
+<%= link_to 'Cancel', commissions_path, class: "btn btn-none" %>

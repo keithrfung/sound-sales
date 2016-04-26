@@ -1,6 +1,6 @@
-<h1>Listing clients</h1>
+<h1>Clients</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>First name</th>
@@ -28,14 +28,27 @@
         <td><%= client.state %></td>
         <td><%= client.country %></td>
         <td><%= client.zipcode %></td>
-        <td><%= link_to 'Show', client %></td>
-        <td><%= link_to 'Edit', edit_client_path(client) %></td>
-        <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <%= link_to client, class: 'btn btn-default btn-xs' do %>
+            <span class="glyphicon glyphicon-search"></span>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to edit_client_path(client), class: 'btn btn-default btn-xs' do %>
+            <span class="glyphicon glyphicon-pencil"></span>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to client, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' do %>
+          <span class="glyphicon glyphicon-remove"></span>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Client', new_client_path %>
+<%= link_to new_client_path, class: 'btn btn-primary' do%>
+Add
+<% end %>

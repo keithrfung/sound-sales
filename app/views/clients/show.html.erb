@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>First name:</strong>
   <%= @client.first_name %>
@@ -45,5 +43,5 @@
   <%= @client.zipcode %>
 </p>
 
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', clients_path %>
+<%= link_to 'Edit', edit_client_path(@client), class: "btn btn-primary" %>
+<%= link_to 'Cancel', clients_path, class: "btn btn-none" %>

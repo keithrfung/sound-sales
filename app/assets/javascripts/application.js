@@ -10,16 +10,8 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-// Bower packages
-//= require metisMenu/dist/metisMenu
-//= require raphael/raphael
-//= require morrisjs/morris
-//= require startbootstrap-sb-admin-2/dist/js/sb-admin-2
-//
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
-
-

@@ -71,6 +71,3 @@ fabric.properties
 .idea/modules.xml
 *.iml
 .idea/
-
-# Bower Components
-/bower_components/

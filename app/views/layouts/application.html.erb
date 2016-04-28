@@ -7,14 +7,29 @@
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
   </head>
-  <body>
-    <%= render 'layouts/header' %>
-    <div class="container">
-    <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>"><%= message %></div>
-    <% end %>
-      <%= yield %>
-      <%= render 'layouts/footer' %>
+<body>
+  <div id="wrapper" >
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <%= render 'layouts/header' %>
+            <!-- Top Menu Items -->
+            <%= render 'layouts/topbar' %>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <%= render 'layouts/sidebar' %>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <% flash.each do |message_type, message| %>
+                    <div class="alert alert-<%= message_type %>"><%= message %></div>
+                <% end %>
+                <%= yield %>
+            </div>
+        </div>
     </div>
-  </body>
+</body>
+
 </html>

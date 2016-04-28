@@ -11,15 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160428015934) do
-
-  create_table "Sales_Products", id: false, force: true do |t|
-    t.integer "sale_id"
-    t.integer "product_id"
-  end
-
-  add_index "Sales_Products", ["product_id"], name: "index_Sales_Products_on_product_id"
-  add_index "Sales_Products", ["sale_id"], name: "index_Sales_Products_on_sale_id"
+ActiveRecord::Schema.define(version: 20160428143241) do
 
   create_table "clients", force: true do |t|
     t.string   "first_name"

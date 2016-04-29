@@ -71,3 +71,6 @@ fabric.properties
 .idea/modules.xml
 *.iml
 .idea/
+
+#Hide Mac DSStore
+.DS_Store

@@ -2,16 +2,7 @@
     <div class="col-lg-12">
         <h1 class="page-header">
             Dashboard
-            <small>Subheading</small>
         </h1>
-        <ol class="breadcrumb">
-            <li>
-                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
-            </li>
-            <li class="active">
-                <i class="fa fa-file"></i> Blank Page
-            </li>
-        </ol>
     </div>
 </div>
 <div class="row">
@@ -28,13 +19,13 @@
                 </div>
             </div>
         </div>
-        <a href="#">
+        <%= link_to sales_path do%>
             <div class="panel-footer">
                 <span class="pull-left">View Sales</span>
                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                 <div class="clearfix"></div>
             </div>
-        </a>
+        <% end %>
     </div>
 </div>
 <div class="col-lg-6 col-md-12">
@@ -50,13 +41,13 @@
                 </div>
             </div>
         </div>
-        <a href="#">
+         <%= link_to commissions_path do%>
             <div class="panel-footer">
                 <span class="pull-left">View Commissions</span>
                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                 <div class="clearfix"></div>
             </div>
-        </a>
+        <% end %>
     </div>
 </div>
     

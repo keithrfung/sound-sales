@@ -20,17 +20,17 @@
         <td><%= product.commission_rate %></td>
         <td>
           <%= link_to product, class: 'btn btn-default btn-xs' do %>
-            <span class="glyphicon glyphicon-search"></span>
+            <i class="fa fa-search" title="View" aria-hidden="true"></i>
           <% end %>
         </td>
         <td>
           <%= link_to edit_product_path(product), class: 'btn btn-default btn-xs' do %>
-            <span class="glyphicon glyphicon-pencil"></span>
+            <i class="fa fa-pencil-square-o" title="Edit" aria-hidden="true"></i>
           <% end %>
         </td>
         <td>
           <%= link_to product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' do %>
-          <span class="glyphicon glyphicon-remove"></span>
+          <i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i>
           <% end %>
         </td>
       </tr>

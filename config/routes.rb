@@ -15,7 +15,8 @@ Rails.application.routes.draw do
   #get 'users/new'
   #get 'static_pages/home'
   root                'static_pages#home'
-  get 'dashboard'  => 'static_pages#home'
+  get 'dashboard'  => 'static_pages#dashboard'
+  get 'ranking'  => 'static_pages#ranking'
   #get 'login'      => 'static_pages#login' # Not used
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'

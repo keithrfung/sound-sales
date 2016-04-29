@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(version: 20160429002929) do
   create_table "saleproducts", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "sales_id"
+    t.integer  "products_id"
     t.integer  "sale_id"
     t.integer  "product_id"
   end

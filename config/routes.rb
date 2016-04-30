@@ -12,20 +12,8 @@ Rails.application.routes.draw do
 
   resources :clients
 
-  #get 'users/new'
-  #get 'static_pages/home'
- 
-  # if logged_in? 
-  #   root :to => redirect("/login")
-  # else
-  #   root :to => redirect("/dashboard")
-  # end 
-
-
-
   get 'dashboard'  => 'static_pages#dashboard'
   get 'ranking'  => 'static_pages#ranking'
-  #get 'login'      => 'static_pages#login' # Not used
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'

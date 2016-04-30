@@ -26,7 +26,6 @@
         <td><%= user.username %></td>
         <td><%= User.find(user.id).region.name %></td>
         
-        <!-- <td><%= user.password_digest %></td> -->
         <td>
           <%= link_to user, class: 'btn btn-default btn-xs' do %>
             <i class="fa fa-search" title="View" aria-hidden="true"></i>

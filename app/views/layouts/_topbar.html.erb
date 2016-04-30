@@ -66,7 +66,11 @@
         <b class="caret"></b></a>
         <ul class="dropdown-menu">
             <li>
+            <% if logged_in? %>
                 <%= link_to "Log out", logout_path, method: :delete %>
+            <% else %>
+                <%= link_to "Log in", login_path %>
+            <% end %>
             </li>
         </ul>
     </li>

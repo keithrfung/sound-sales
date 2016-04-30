@@ -12,12 +12,8 @@ Rails.application.routes.draw do
 
   resources :clients
 
-  #get 'users/new'
-  #get 'static_pages/home'
-  root                'static_pages#home'
   get 'dashboard'  => 'static_pages#dashboard'
   get 'ranking'  => 'static_pages#ranking'
-  #get 'login'      => 'static_pages#login' # Not used
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
@@ -83,5 +79,6 @@ Rails.application.routes.draw do
   get '/rails/info/properties' => "rails/info#properties"
   get '/rails/info/routes'     => "rails/info#routes"
   get '/rails/info'            => "rails/info#index"
-  get '/'                      => "static_pages#home"
+  #get '/'                      => "login"
+  # get '/'                      => "static_pages#home"
 end

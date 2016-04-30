@@ -1,0 +1,2 @@
+class HomeRouteController < ApplicationController
+end

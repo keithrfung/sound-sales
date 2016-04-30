@@ -14,7 +14,15 @@ Rails.application.routes.draw do
 
   #get 'users/new'
   #get 'static_pages/home'
-  root                'static_pages#home'
+ 
+  # if logged_in? 
+  #   root :to => redirect("/login")
+  # else
+  #   root :to => redirect("/dashboard")
+  # end 
+
+
+
   get 'dashboard'  => 'static_pages#dashboard'
   get 'ranking'  => 'static_pages#ranking'
   #get 'login'      => 'static_pages#login' # Not used
@@ -83,5 +91,6 @@ Rails.application.routes.draw do
   get '/rails/info/properties' => "rails/info#properties"
   get '/rails/info/routes'     => "rails/info#routes"
   get '/rails/info'            => "rails/info#index"
-  get '/'                      => "static_pages#home"
+  #get '/'                      => "login"
+  # get '/'                      => "static_pages#home"
 end

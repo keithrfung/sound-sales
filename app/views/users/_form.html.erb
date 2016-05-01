@@ -45,8 +45,8 @@
   <div class="form-group">
     <%= f.label :role, class:"col-sm-2 control-label" %>
     <div class="col-sm-10">
-    <%= f.collection_select :role, User.select(:role).distinct,:id,:role, {include_blank: false}, 
-      {class:"form-control"} %>
+    <%= f.select :role, options_for_select([["Sales", "Sales"], ["Human Resources", "Human Resources"], 
+      ["Accounting", "Accounting"]]), {}, {include_blank: 'false', class: 'form-control'} %>
     </div>
   </div>
   <div class="actions pull-right">

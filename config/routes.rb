@@ -13,9 +13,11 @@ Rails.application.routes.draw do
   resources :clients
 
   get 'ranking'  => 'static_pages#ranking'
-  get 'dashboard'  => 'static_pages#ranking'
-
-
+  get 'dashboard'  => 'home#dashboard'
+  
+  #catch arbitrary paths
+  get '*path' => redirect('/')
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

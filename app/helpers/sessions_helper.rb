@@ -3,4 +3,8 @@ module SessionsHelper
   def logged_in?
     !current_user.nil?
   end
+  
+  def check_sale_permission?
+    current_user.role?('Sales')
+  end
 end

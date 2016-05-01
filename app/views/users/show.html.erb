@@ -20,7 +20,11 @@
 
 <p>
   <strong>Region:</strong>
-  <%= @user.region.name %>
+  <% if @user.region == nil %>
+      Not found!
+  <% else %>
+      <%= @user.region.name %>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user), class: "btn btn-primary" %>

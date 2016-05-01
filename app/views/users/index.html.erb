@@ -24,7 +24,13 @@
         <td><%= user.first_name %></td>
         <td><%= user.last_name %></td>
         <td><%= user.username %></td>
-        <td><%= User.find(user.id).region.name %></td>
+        <td>
+          <% if User.find(user.id).region == nil %>
+            Not found!
+          <% else %>
+            <%= User.find(user.id).region.name %>
+          <% end %>
+        </td>
         
         <td>
           <%= link_to user, class: 'btn btn-default btn-xs' do %>

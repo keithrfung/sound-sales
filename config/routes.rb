@@ -1,23 +1,19 @@
 Rails.application.routes.draw do
 
-  resources :users
-
-  resources :products
-
-  resources :commissions
-
-  resources :regions
-
-  resources :sales
-
-  resources :clients
-
-  get 'dashboard'  => 'static_pages#dashboard'
-  get 'ranking'  => 'static_pages#ranking'
+  root 'home#dashboard'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
+
   resources :users
+  resources :products
+  resources :commissions
+  resources :regions
+  resources :sales
+  resources :clients
+
+  get 'ranking'  => 'static_pages#ranking'
+  get 'dashboard'  => 'static_pages#ranking'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

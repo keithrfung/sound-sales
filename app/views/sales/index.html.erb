@@ -27,6 +27,7 @@
         <td><%= Product.joins(:saleproducts).where(id: sale.id).pluck(:name).flatten.join('') %></td>
         <td><%= sale.quantity %></td>
         <td>$<%= number_with_precision(sale.total, precision:2) %></td>
+        <td>FIX ME</td>
         <td><%= sale.payment_type %></td>
          <td>
           <%= link_to sale, class: 'btn btn-default btn-xs' do %>

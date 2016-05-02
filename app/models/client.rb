@@ -3,8 +3,7 @@ class Client < ActiveRecord::Base
     after_initialize :init
 
     def init
-	    self.first_name		||= ""
-	    self.last_name		||= ""
+	    self.name			||= ""
 	    self.phone			||= ""
 	    self.address_line_1	||= ""
 	    self.address_line_2	||= ""

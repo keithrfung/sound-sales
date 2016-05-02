@@ -29,9 +29,9 @@ ActiveRecord::Schema.define(version: 20160502020235) do
 
   create_table "commissions", force: true do |t|
     t.decimal  "amount"
+    t.integer  "sale_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "sale_id"
   end
 
   create_table "products", force: true do |t|
@@ -44,17 +44,17 @@ ActiveRecord::Schema.define(version: 20160502020235) do
   end
 
   create_table "regions", force: true do |t|
+    t.string   "name"
+    t.integer  "manager_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "manager_id"
-    t.string   "name"
   end
 
   create_table "saleproducts", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.integer  "sale_id"
     t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "sales", force: true do |t|
@@ -82,11 +82,11 @@ ActiveRecord::Schema.define(version: 20160502020235) do
     t.string   "email"
     t.string   "password_hash"
     t.string   "password_salt"
+    t.string   "role"
+    t.integer  "region_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "role"
     t.integer  "manager_id"
-    t.integer  "region_id"
   end
 
   add_index "users", ["manager_id"], name: "index_users_on_manager_id"

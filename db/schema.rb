@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160501011121) do
+ActiveRecord::Schema.define(version: 20160502020235) do
 
   create_table "clients", force: true do |t|
     t.string   "first_name"
@@ -44,22 +44,15 @@ ActiveRecord::Schema.define(version: 20160501011121) do
   end
 
   create_table "regions", force: true do |t|
-    t.string   "name"
-    t.string   "area"
-    t.string   "city"
-    t.string   "state"
-    t.string   "zipcode"
-    t.string   "country"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "manager_id"
+    t.string   "name"
   end
 
   create_table "saleproducts", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "sales_id"
-    t.integer  "products_id"
     t.integer  "sale_id"
     t.integer  "product_id"
   end
@@ -75,15 +68,16 @@ ActiveRecord::Schema.define(version: 20160501011121) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "client_id"
+    t.integer  "product_id"
   end
 
   add_index "sales", ["client_id"], name: "index_sales_on_client_id"
+  add_index "sales", ["product_id"], name: "index_sales_on_product_id"
   add_index "sales", ["user_id"], name: "index_sales_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "username"
     t.string   "password"
     t.string   "email"
     t.string   "password_hash"

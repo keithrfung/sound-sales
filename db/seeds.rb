@@ -15,7 +15,7 @@ User.create!(first_name: "Adam",
     		password_confirmation: "password",
     		role: "Admin",
     		manager_id: 0,
-    		region_id: 1)
+    		region_id: 0)
 
 User.create!(first_name: "Sam",
     		last_name: "Salesperson",

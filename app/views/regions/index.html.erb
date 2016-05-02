@@ -10,11 +10,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Area</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Zipcode</th>
-      <th>Country</th>
+      <th>Manager</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,11 +19,7 @@
     <% @regions.each do |region| %>
       <tr>
         <td><%= region.name %></td>
-        <td><%= region.area %></td>
-        <td><%= region.city %></td>
-        <td><%= region.state %></td>
-        <td><%= region.zipcode %></td>
-        <td><%= region.country %></td>
+        <td>FIXME</td>
         <td>
           <%= link_to region, class: 'btn btn-default btn-xs' do %>
             <i class="fa fa-search" title="View" aria-hidden="true"></i>

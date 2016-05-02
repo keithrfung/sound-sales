@@ -6,7 +6,7 @@
                         Dashboard
             <% end %>
         </li>
-        <% if current_user.has_role?('Sales') %>
+        <% if current_user.has_role?('Sales') || current_user.has_role?('Admin') %>
             <li>
                 <a href="javascript:;" data-toggle="collapse" data-target="#sales"><i class="fa fa-fw fa-line-chart"></i> Sales <i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="sales" class="collapse">
@@ -23,7 +23,7 @@
                 </ul>
             </li>
         <% end %>
-        <% if current_user.has_role?('Accounting') %>
+        <% if current_user.has_role?('Accounting') || current_user.has_role?('Admin') %>
             <li>
                 <a href="javascript:;" data-toggle="collapse" data-target="#products"><i class="fa fa-fw fa-shopping-cart"></i> Products <i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="products" class="collapse">
@@ -40,7 +40,7 @@
                 </ul>
             </li>
         <% end %>
-        <% if current_user.has_role?('Human Resources') %>
+        <% if current_user.has_role?('Human Resources') || current_user.has_role?('Admin') %>
             <li>
                 <a href="javascript:;" data-toggle="collapse" data-target="#users"><i class="fa fa-fw fa-users"></i> Users <i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="users" class="collapse">
@@ -57,7 +57,7 @@
                 </ul>
             </li>
         <% end %>
-        <% if current_user.has_role?('Sales Manager') %>
+        <% if current_user.has_role?('Sales Manager') || current_user.has_role?('Admin') %>
             <li>
                 <a href="javascript:;" data-toggle="collapse" data-target="#regions"><i class="fa fa-fw fa-map-marker"></i> Regions <i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="regions" class="collapse">
@@ -74,7 +74,7 @@
                 </ul>
             </li>
         <% end %>
-        <% if current_user.has_role?('Accounting') %>
+        <% if current_user.has_role?('Accounting') || current_user.has_role?('Admin') %>
             <li>
                 <a href="javascript:;" data-toggle="collapse" data-target="#clients"><i class="fa fa-fw fa-user"></i> Clients <i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="clients" class="collapse">
@@ -91,7 +91,7 @@
                 </ul>
             </li>
         <% end %>
-        <% if current_user.has_role?('Sales') %>
+        <% if current_user.has_role?('Sales') || current_user.has_role?('Admin') %>
             <li>
                 <%= link_to commissions_path do%>
                     <i class="fa fa-fw fa-dollar"></i> 
@@ -99,7 +99,7 @@
                 <% end %>
             </li>
         <% end %>
-        <% if current_user.has_role?('Sales') %>
+        <% if current_user.has_role?('Sales') || current_user.has_role?('Admin') %>
             <li>
                 <%= link_to ranking_path do%>
                         <i class="fa fa-fw fa-trophy"></i> 

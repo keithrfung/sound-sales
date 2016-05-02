@@ -9,19 +9,17 @@
 </p>
 
 <p>
-  <strong>Username:</strong>
-  <%= @user.username %>
+  <strong>Email:</strong>
+  <%= @user.email %>
 </p>
-
 <p>
-  <strong>Password:</strong>
-  <%= @user.password %>
+  <strong>Role:</strong>
+  <%= @user.role %>
 </p>
-
 <p>
   <strong>Region:</strong>
   <% if @user.region == nil %>
-      Not found!
+      N/A
   <% else %>
       <%= @user.region.name %>
   <% end %>

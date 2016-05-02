@@ -4,7 +4,7 @@
 </p>
 <p>
   <strong>Manager:</strong>
-  FIXME
+   <%= User.find(@region.manager_id).nil? ? "Unassigned" : User.find(@region.manager_id).full_name %>
 </p>
 
 <%= link_to 'Edit', edit_region_path(@region), class: "btn btn-primary" %>

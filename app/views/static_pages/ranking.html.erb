@@ -15,8 +15,17 @@
       <th>Total Sales</th>
     </tr>
   </thead>
-
+  <% @rankedUsers.each_with_index do |rankedUser, i| %>
+      <tr>
+        <td><%= i+1 %></td>
+        <td><%= rankedUser.full_name %></td>
+        <td><%= rankedUser.region.nil? ? "N/A" : rankedUser.region.name %></td>
+        <td>$<%= number_with_precision(rankedUser.sales_total, precision:2) %></td>
+      </tr>
+    <% end %>
   <tbody>
    
   </tbody>
 </table>
+
+

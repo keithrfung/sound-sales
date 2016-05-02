@@ -1,11 +1,6 @@
 class StaticPagesController < ApplicationController
-  def login
-  end
-
-  def dashboard
-  end
-  
   def ranking
+    @rankedUsers = User.all.sort_by(&:sales_total)
   end
   
 end

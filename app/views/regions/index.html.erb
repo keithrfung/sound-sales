@@ -19,7 +19,7 @@
     <% @regions.each do |region| %>
       <tr>
         <td><%= region.name %></td>
-        <td>FIXME</td>
+        <td><%= User.find(region.manager_id).nil? ? "Unassigned" : User.find(region.manager_id).full_name %></td>
         <td>
           <%= link_to region, class: 'btn btn-default btn-xs' do %>
             <i class="fa fa-search" title="View" aria-hidden="true"></i>

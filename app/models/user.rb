@@ -2,6 +2,12 @@ class User < ActiveRecord::Base
 	attr_accessor :password
 	validates_confirmation_of :password
 	before_save :encrypt_password
+	#validates :password, presence: true, length: { minimum: 6}
+	VALID_EMAIL = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+	validates :email, presence: true, length: { maximum: 150 },
+						format: { with:VALID_EMAIL },
+						uniqueness: { case_sensitive: false }
+	validates :role, presence: true					
 	belongs_to :region
 	has_many :sales
 	has_many :subordinates, class_name: "User", foreign_key: "manager_id"

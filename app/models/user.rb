@@ -11,7 +11,6 @@ class User < ActiveRecord::Base
     def init
 		self.first_name	||= "" 
 	    self.last_name	||= "" 
-	    self.username	||= "" 
 	    self.password	||= "" 
 	    self.role		||= "" 
 	    self.manager_id	||= 0.0  

@@ -22,8 +22,8 @@
       <tr>
         <td><%= product.name %></td>
         <td><%= product.description %></td>
-        <td><%= product.price %></td>
-        <td><%= product.commission_rate %></td>
+        <td>$<%= number_with_precision(product.price, precision:2) %></td>
+        <td><%= product.commission_rate %>%</td>
         <td>
           <%= link_to product, class: 'btn btn-default btn-xs' do %>
             <i class="fa fa-search" title="View" aria-hidden="true"></i>

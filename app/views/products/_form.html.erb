@@ -28,7 +28,7 @@
     <div class="col-sm-10">
      <div class="input-group">
       <div class="input-group-addon">$</div>
-      <%= f.number_field :price, :step => 'any', class: 'text_field form-control'%>
+      <%= f.number_field :price, :step => 'any', :value => (number_with_precision(f.object.price, :precision => 2) || 0), class: 'text_field form-control'%>
       </div>
     </div>
   </div>
@@ -36,9 +36,8 @@
     <%= f.label :commission_rate, class:"col-sm-2 control-label" %>
     <div class="col-sm-10">
      <div class="input-group">
-      <div class="input-group-addon">$</div>
       <%= f.number_field :commission_rate, :step => 'any', class: 'text_field form-control'%>
-      <div class="input-group-addon">/ each</div>
+      <div class="input-group-addon">%</div>
       </div>
     </div>
   </div>

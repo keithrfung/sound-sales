@@ -1,21 +1,29 @@
 <p>
+  <strong>Product:</strong>
+  FIXME
+</p>
+<p>
+  <strong>Price:</strong>
+  FIXME
+</p>
+<p>
   <strong>Quantity:</strong>
   <%= @sale.quantity %>
 </p>
 
 <p>
   <strong>Subtotal:</strong>
-  <%= @sale.subtotal %>
+  $<%= number_with_precision(@sale.subtotal, precision:2) %>
 </p>
 
 <p>
   <strong>Tax:</strong>
-  <%= @sale.tax %>
+  <%= @sale.tax %>%
 </p>
 
 <p>
   <strong>Total:</strong>
-  <%= @sale.total %>
+  $<%= number_with_precision(@sale.total, precision:2) %>
 </p>
 
 <p>

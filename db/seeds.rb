@@ -7,6 +7,16 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
+User.create!(first_name: "Adam",
+    		last_name: "Administrator",
+    		username: "adam_admin",
+    		password: "password",
+    		email: "adam@sales.com",
+    		password_confirmation: "password",
+    		role: "Admin",
+    		manager_id: 0,
+    		region_id: 0)
+
 User.create!(first_name: "Sam",
     		last_name: "Salesperson",
     		username: "sam_sales",

@@ -24,8 +24,7 @@
     <% @sales.each do |sale| %>
       <tr>
         <td><%= sale.sale_date %></td>
-        <td>FIXME</td>
-        <td>FIXME</td>
+        <td><%= Product.joins(:saleproducts).where(id: sale.id).pluck(:name).flatten.join('') %></td>
         <td><%= sale.quantity %></td>
         <td>$<%= number_with_precision(sale.total, precision:2) %></td>
         <td><%= sale.payment_type %></td>

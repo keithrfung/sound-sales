@@ -5,11 +5,6 @@ class Region < ActiveRecord::Base
 
     def init
 	    self.name 		||= ""
-	    self.area		||= ""
-	    self.city		||= ""
-	    self.state		||= ""
-	    self.zipcode	||= ""
-	    self.country	||= ""
 	    self.manager_id	||= 0.0 
     end
 end

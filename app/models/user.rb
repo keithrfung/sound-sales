@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
 	validates :email, presence: true, length: { maximum: 150 },
 						format: { with:VALID_EMAIL },
 						uniqueness: { case_sensitive: false }
+	validates :role, presence: true					
 	belongs_to :region
 	has_many :sales
 	has_many :subordinates, class_name: "User", foreign_key: "manager_id"

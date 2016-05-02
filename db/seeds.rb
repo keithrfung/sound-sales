@@ -9,7 +9,6 @@
 
 User.create!(first_name: "Adam",
     		last_name: "Administrator",
-    		username: "adam_admin",
     		password: "password",
     		email: "adam@sales.com",
     		password_confirmation: "password",
@@ -19,7 +18,6 @@ User.create!(first_name: "Adam",
 
 User.create!(first_name: "Sam",
     		last_name: "Salesperson",
-    		username: "sam_sales",
     		password: "password",
     		email: "sam@sales.com",
     		password_confirmation: "password",

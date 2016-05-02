@@ -16,6 +16,24 @@ User.create!(first_name: "Adam",
             manager_id: 0,
             region_id: 0)
 
+User.create!(first_name: "Harry",
+            last_name: "HumanResources",
+            password: "password",
+            email: "harry@sales.com",
+            password_confirmation: "password",
+            role: "HR",
+            manager_id: 0,
+            region_id: 0)
+
+User.create!(first_name: "Annie",
+            last_name: "Accounting",
+            password: "password",
+            email: "annie@sales.com",
+            password_confirmation: "password",
+            role: "Accounting",
+            manager_id: 0,
+            region_id: 0)
+
 User.create!(first_name: "Sam",
             last_name: "Salesperson",
             password: "password",

@@ -21,8 +21,7 @@
     <%= f.label :manager, class:"col-sm-2 control-label" %>
     <div class="col-sm-10">
     <!-- Currently showing all users, could limit it to those who are not current region managers -->
-    <%= f.collection_select :manager_id, User.order(:first_name),:id,:first_name, {include_blank: false}, 
-      {class:"form-control"} %>
+    <%= f.collection_select( :manager_id, User.all, :id, :full_name, {include_blank: false}, {class:"form-control"}) %>
       
     </div>
   </div>

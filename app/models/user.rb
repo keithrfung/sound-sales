@@ -17,6 +17,14 @@ class User < ActiveRecord::Base
 	    self.region_id	||= 0.0  
     end
 	
+	def sales_total
+		Sale.all.where(:user_id => :user_id).sum(:total)
+	end
+	
+	def full_name
+  		"#{first_name}" +  " " + "#{last_name}"
+	end
+	
 	def has_role?(role_name)
     	self.role == role_name
   	end

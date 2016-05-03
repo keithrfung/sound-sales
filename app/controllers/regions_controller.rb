@@ -31,6 +31,7 @@ class RegionsController < ApplicationController
         format.html { redirect_to @region, success: 'Region was successfully created.' }
         format.json { render :show, status: :created, location: @region }
       else
+        flash.now[:danger] = "There was a problem creating the region"
         format.html { render :new }
         format.json { render json: @region.errors, status: :unprocessable_entity }
       end

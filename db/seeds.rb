@@ -111,7 +111,8 @@ Client.create!(name: "Infotel Corporation",
 
 
 Commission.create!(amount: 2634.16,
-                   sale_id: 1)
+                   sale_id: 1,
+                   product_id: 1)
 
 
 Sale.create!(quantity: 7,
@@ -122,7 +123,8 @@ Sale.create!(quantity: 7,
              sale_date: "2016-05-02 00:16:22",
              user_id: 1,
              client_id: 1,
-             product_id: 1)
+             product_id: 1,
+             commissions_id: 1)
 
 
 

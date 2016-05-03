@@ -14,6 +14,7 @@ class Sale < ActiveRecord::Base
 	    self.payment_type	||= "" 
 	    self.sale_date		||= "" 
 	    self.user_id		||= 0.0  
-	    self.client_id		||= 0.0  
+	    self.client_id		||= 0.0 
+	    self.commissions_id	||= 0.0  
     end
 end

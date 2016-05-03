@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160502163430) do
+ActiveRecord::Schema.define(version: 20160503021814) do
 
   create_table "clients", force: true do |t|
     t.string   "phone"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20160502163430) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "sale_id"
+    t.integer  "product_id"
   end
 
   create_table "products", force: true do |t|
@@ -68,9 +69,11 @@ ActiveRecord::Schema.define(version: 20160502163430) do
     t.integer  "user_id"
     t.integer  "client_id"
     t.integer  "product_id"
+    t.integer  "commissions_id"
   end
 
   add_index "sales", ["client_id"], name: "index_sales_on_client_id"
+  add_index "sales", ["commissions_id"], name: "index_sales_on_commissions_id"
   add_index "sales", ["product_id"], name: "index_sales_on_product_id"
   add_index "sales", ["user_id"], name: "index_sales_on_user_id"
 

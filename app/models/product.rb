@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+	has_one :commission
 	has_many :saleproducts
   	has_many :sales, through: :saleproducts
   	after_initialize :init

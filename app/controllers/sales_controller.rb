@@ -31,6 +31,7 @@ class SalesController < ApplicationController
         format.html { redirect_to @sale, success: 'Sale was successfully created.' }
         format.json { render :show, status: :created, location: @sale }
       else
+        flash.now[:danger] = "There was a problem creating the sale"
         format.html { render :new }
         format.json { render json: @sale.errors, status: :unprocessable_entity }
       end

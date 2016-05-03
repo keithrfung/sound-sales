@@ -24,9 +24,8 @@
     <% @sales.each do |sale| %>
       <tr>
         <td><%= sale.sale_date %></td>
-        <!-- ADD NULL CHECK? -->
-        <td><%= Product.joins(:saleproducts).where(id: sale.id).pluck(:name).flatten.join('') %></td>
-        <td>$<%= Product.joins(:saleproducts).where(id: sale.id).pluck(:price).flatten.join('') %></td>
+        <td><%= Product.joins(:saleproducts).where(id: sale.id) == nil ? "N/A" : Product.joins(:saleproducts).where(id: sale.id).pluck(:name).flatten.join('')%></td>
+        <td>$<%= Product.joins(:saleproducts).where(id: sale.id) == nil ? "N/A" : Product.joins(:saleproducts).where(id: sale.id).pluck(:price).flatten.join('') %></td>
         <td><%= sale.quantity %></td>
         <td>$<%= number_with_precision(sale.total, precision:2) %></td>
         <td><%= sale.payment_type %></td>

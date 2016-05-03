@@ -1,4 +1,7 @@
 class Sale < ActiveRecord::Base
+	validates :product_id, presence: true
+	validates :quantity, :numericality => { :greater_than => 0 }
+
 	belongs_to :user
 	belongs_to :client
 	has_many :saleproducts
@@ -14,6 +17,8 @@ class Sale < ActiveRecord::Base
 	    self.payment_type	||= "" 
 	    self.sale_date		||= "" 
 	    self.user_id		||= 0.0  
-	    self.client_id		||= 0.0  
+	    self.client_id		||= 0.0 
+	    self.product_id		||= 0.0 
+	    self.commissions_id	||= 0.0  
     end
 end

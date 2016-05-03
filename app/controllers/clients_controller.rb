@@ -31,6 +31,7 @@ class ClientsController < ApplicationController
         format.html { redirect_to @client, success: 'Client was successfully created.' }
         format.json { render :show, status: :created, location: @client }
       else
+        flash.now[:danger] = "There was a problem creating the client."
         format.html { render :new }
         format.json { render json: @client.errors, status: :unprocessable_entity }
       end
@@ -45,6 +46,7 @@ class ClientsController < ApplicationController
         format.html { redirect_to @client, success: 'Client was successfully updated.' }
         format.json { render :show, status: :ok, location: @client }
       else
+        flash.now[:danger] = "There was a problem updating the client."
         format.html { render :edit }
         format.json { render json: @client.errors, status: :unprocessable_entity }
       end

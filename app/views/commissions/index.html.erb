@@ -21,10 +21,18 @@
   <tbody>
     <% @commissions.each do |commission| %>
       <tr>
-        <td>FIXME</td>
-        <td>FIXME</td>
-        <td>FIXME</td>
-        <td>FIXME</td>
+        <td>
+          <%= Sale.joins(:commissions).where(id: commission.sale_id).pluck(:sale_date).flatten.join('') == nil ? "N/A" : Sale.joins(:commissions).where(id: commission.sale_id).pluck(:sale_date).flatten.join('') %>
+        </td>
+        <td>
+          <%= Product.joins(:commission).where(id: commission.product_id).pluck(:name).flatten.join('') == nil ? "N/A" : Product.joins(:commission).where(id: commission.product_id).pluck(:name).flatten.join('') %>
+        </td>
+        <td>
+          <%= Client.joins(:sales).where(id: commission.sale_id) == nil ? "N/A" : Client.joins(:sales).where(id: commission.sale_id).pluck(:name).flatten.join('') %>
+        </td>
+        <td>
+          <%= Sale.joins(:commissions).where(id: commission.sale_id).pluck(:total).flatten.join('') == nil ? "N/A" : Sale.joins(:commissions).where(id: commission.sale_id).pluck(:total).flatten.join('') %>
+        </td>
         <td><%= commission.amount %></td>
         <td>
           <%= link_to commission, class: 'btn btn-default btn-xs' do %>

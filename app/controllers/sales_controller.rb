@@ -31,6 +31,7 @@ class SalesController < ApplicationController
         format.html { redirect_to @sale, success: 'Sale was successfully created.' }
         format.json { render :show, status: :created, location: @sale }
       else
+        flash.now[:danger] = "There was a problem creating the sale"
         format.html { render :new }
         format.json { render json: @sale.errors, status: :unprocessable_entity }
       end
@@ -45,6 +46,7 @@ class SalesController < ApplicationController
         format.html { redirect_to @sale, success: 'Sale was successfully updated.' }
         format.json { render :show, status: :ok, location: @sale }
       else
+        flash.now[:danger] = "There was a problem updating the sale"
         format.html { render :edit }
         format.json { render json: @sale.errors, status: :unprocessable_entity }
       end
@@ -69,6 +71,6 @@ class SalesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sale_params
-      params.require(:sale).permit(:quantity, :subtotal, :tax, :total, :payment_type, :sale_date)
+      params.require(:sale).permit(:quantity, :subtotal, :tax, :total, :payment_type, :sale_date, :user_id, :client_id, :commissions_id)
     end
 end

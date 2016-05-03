@@ -31,7 +31,7 @@ class UsersController < ApplicationController
         format.html { redirect_to @user, success: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
-        flash[:danger] = "There was a problem creating the user."
+        flash.now[:danger] = "There was a problem creating the user."
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
@@ -46,6 +46,7 @@ class UsersController < ApplicationController
         format.html { redirect_to @user, success: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
+        flash.now[:danger] = "There was a problem updating the user."
         format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end

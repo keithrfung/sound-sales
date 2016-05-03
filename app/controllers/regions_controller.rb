@@ -46,6 +46,7 @@ class RegionsController < ApplicationController
         format.html { redirect_to @region, success: 'Region was successfully updated.' }
         format.json { render :show, status: :ok, location: @region }
       else
+        flash.now[:danger] = "There was a problem updating the region"
         format.html { render :edit }
         format.json { render json: @region.errors, status: :unprocessable_entity }
       end

@@ -1,4 +1,6 @@
 class Client < ActiveRecord::Base
+	validates :name, presence: true
+
 	has_many :sales
     after_initialize :init
 

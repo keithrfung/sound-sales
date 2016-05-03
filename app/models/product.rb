@@ -1,4 +1,7 @@
 class Product < ActiveRecord::Base
+	validates :name, presence: true
+	validates :price, :numericality => { :greater_than => 0 }
+
 	has_one :commission
 	has_many :saleproducts
   	has_many :sales, through: :saleproducts

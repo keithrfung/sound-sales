@@ -21,7 +21,7 @@ User.create!(first_name: "Harry",
             password: "password",
             email: "harry@sales.com",
             password_confirmation: "password",
-            role: "HR",
+            role: "Human Resources",
             manager_id: 0,
             region_id: 0)
 
@@ -70,25 +70,42 @@ User.create!(first_name: "Sven",
             manager_id: 2,
             region_id: 2)
 
-
-
-Region.create!(name: "Eastern",
+Region.create!(name: "East",
                manager_id: 1)
 
-Region.create!(name: "Western",
+Region.create!(name: "West",
                manager_id: 2)
-
-
+               
+Region.create!(name: "Mistake1",
+               manager_id: 1)
+               
+Region.create!(name: "Mistake2",
+               manager_id: 1)
+               
+Region.create!(name: "Mistake3",
+               manager_id: 1)
+               
+Region.create!(name: "Mistake4",
+               manager_id: 1)
+               
+Region.create!(name: "Mistake5",
+               manager_id: 1)
+               
+Region.create!(name: "Mistake6",
+               manager_id: 1)
+               
+Region.create!(name: "Mistake7",
+               manager_id: 1)
 
 Product.create!(name: "Server",
                 description: "64GB RAM",
                 price: 3124.00,
-                commission_rate: 0.12)
+                commission_rate: 12.0)
 
 Product.create!(name: "Firewall",
                 description: "SSL VPN",
                 price: 8200.00,
-                commission_rate: 0.18)
+                commission_rate: 18.0)
 
 
 Client.create!(name: "Allied Corporation",
@@ -116,7 +133,7 @@ Commission.create!(amount: 2634.16,
 
 Sale.create!(quantity: 7,
              subtotal: 21868.00,
-             tax: 1312.08,
+             tax: 5.0,
              total: 23180.08,
              payment_type: "Check",
              sale_date: "2016-05-02 00:16:22",

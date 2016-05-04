@@ -22,7 +22,7 @@ class Sale < ActiveRecord::Base
     end
 	
 	def calculate
-		self.subtotal = quantity * 4.00 #FIXME
+		self.subtotal = self.quantity * 4.00 #FIXME
 		self.total = (1 + tax / 100) * self.subtotal
 	end
 end

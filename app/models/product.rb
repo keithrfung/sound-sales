@@ -3,8 +3,8 @@ class Product < ActiveRecord::Base
 	validates :price, :numericality => { :greater_than => 0 }
 
 	has_one :commission
-	has_many :saleproducts
-  	has_many :sales, through: :saleproducts
+	#has_many :saleproducts
+  	has_many :sales #, through: :saleproducts
   	after_initialize :init
 
     def init

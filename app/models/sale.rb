@@ -4,9 +4,9 @@ class Sale < ActiveRecord::Base
 
 	belongs_to :user
 	belongs_to :client
-	has_many :saleproducts
-  	has_many :products, through: :saleproducts
-  	has_many :commissions
+	#has_many :saleproducts
+  	has_one :product #s, through: :saleproducts
+  	has_one :commission
   	after_initialize :init
 	before_save :calculate
 
@@ -18,7 +18,7 @@ class Sale < ActiveRecord::Base
 	    self.user_id		||= 0.0  
 	    self.client_id		||= 0.0 
 	    self.product_id		||= 0.0 
-	    self.commissions_id	||= 0.0  
+	    self.commission_id	||= 0.0  
     end
 	
 	def calculate

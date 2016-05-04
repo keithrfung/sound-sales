@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160503021814) do
+ActiveRecord::Schema.define(version: 20160504014808) do
 
   create_table "clients", force: true do |t|
     t.string   "phone"
@@ -21,21 +21,18 @@ ActiveRecord::Schema.define(version: 20160503021814) do
     t.string   "state"
     t.string   "country"
     t.string   "zipcode"
-    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   create_table "commissions", force: true do |t|
     t.decimal  "amount"
-    t.integer  "sale_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "products_id"
+    t.integer  "sale_id"
     t.integer  "product_id"
   end
-
-  add_index "commissions", ["products_id"], name: "index_commissions_on_products_id"
 
   create_table "products", force: true do |t|
     t.string   "name"
@@ -47,17 +44,10 @@ ActiveRecord::Schema.define(version: 20160503021814) do
   end
 
   create_table "regions", force: true do |t|
-    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "manager_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "saleproducts", force: true do |t|
-    t.integer  "sale_id"
-    t.integer  "product_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string   "name"
   end
 
   create_table "sales", force: true do |t|
@@ -72,11 +62,10 @@ ActiveRecord::Schema.define(version: 20160503021814) do
     t.integer  "user_id"
     t.integer  "client_id"
     t.integer  "product_id"
-    t.integer  "commissions_id"
+    t.integer  "commission_id"
   end
 
   add_index "sales", ["client_id"], name: "index_sales_on_client_id"
-  add_index "sales", ["commissions_id"], name: "index_sales_on_commissions_id"
   add_index "sales", ["product_id"], name: "index_sales_on_product_id"
   add_index "sales", ["user_id"], name: "index_sales_on_user_id"
 
@@ -87,11 +76,11 @@ ActiveRecord::Schema.define(version: 20160503021814) do
     t.string   "email"
     t.string   "password_hash"
     t.string   "password_salt"
-    t.string   "role"
-    t.integer  "region_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "role"
     t.integer  "manager_id"
+    t.integer  "region_id"
   end
 
   add_index "users", ["manager_id"], name: "index_users_on_manager_id"

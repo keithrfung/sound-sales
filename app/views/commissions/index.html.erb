@@ -26,7 +26,6 @@
         <td><%= Client.find(sale.client_id).nil? ? "N/A" : Client.find(sale.client_id).name %></td>
         <td>$<%= number_with_precision(sale.total, precision:2) %></td>
         <td>$<%= number_with_precision(sale.commission, precision:2) %></td>
-        <td><%= sale.payment_type %></td>
       </tr>
     <% end %>
   </tbody>

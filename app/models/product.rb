@@ -14,4 +14,8 @@ class Product < ActiveRecord::Base
 	    self.commission_rate	||= 0.0 
     end
 	
+	def name_and_price
+	     self.name + " ($" + ('%.2f' % self.price) + ")"
+	end
+	
 end

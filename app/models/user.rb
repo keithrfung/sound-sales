@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
     end
 	
 	def sales_total
-		Sale.all.where(:user_id => :user_id).sum(:total)
+		Sale.all.where(:user_id => self.id).sum(:total)
 	end
 	
 	def full_name

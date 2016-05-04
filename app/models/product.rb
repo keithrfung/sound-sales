@@ -13,4 +13,5 @@ class Product < ActiveRecord::Base
 	    self.price				||= 0.0 
 	    self.commission_rate	||= 0.0 
     end
+	
 end

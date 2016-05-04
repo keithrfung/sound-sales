@@ -8,12 +8,11 @@ class Sale < ActiveRecord::Base
   	has_many :products, through: :saleproducts
   	has_many :commissions
   	after_initialize :init
+	before_save :calculate
 
     def init
 	    self.quantity		||= 0.0  
-	    self.subtotal		||= 0.0  
 	    self.tax			||= 0.0  
-	    self.total			||= 0.0  
 	    self.payment_type	||= "" 
 	    self.sale_date		||= "" 
 	    self.user_id		||= 0.0  
@@ -21,4 +20,9 @@ class Sale < ActiveRecord::Base
 	    self.product_id		||= 0.0 
 	    self.commissions_id	||= 0.0  
     end
+	
+	def calculate
+		self.subtotal ||= quantity * (products.first.nil? ? 0.0 : products.first.price)
+		self.total ||= tax / 100 * self.subtotal
+	end
 end

@@ -57,7 +57,7 @@
                 </ul>
             </li>
         <% end %>
-        <% if current_user.has_role?('Sales Manager') || current_user.has_role?('Admin') %>
+        <% if current_user.has_role?('Accounting') || current_user.has_role?('Admin') || current_user.has_role?('Sales Manager') %>
             <li>
                 <a href="javascript:;" data-toggle="collapse" data-target="#regions"><i class="fa fa-fw fa-map-marker"></i> Regions <i class="fa fa-fw fa-caret-down"></i></a>
                 <ul id="regions" class="collapse">

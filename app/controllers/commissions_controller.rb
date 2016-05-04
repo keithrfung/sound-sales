@@ -4,7 +4,7 @@ class CommissionsController < ApplicationController
   # GET /commissions
   # GET /commissions.json
   def index
-    @sales = Sale.where(user_id = current_user.id)
+    @sales = Sale.where(user_id: current_user.id)
   end
 
   # GET /commissions/1

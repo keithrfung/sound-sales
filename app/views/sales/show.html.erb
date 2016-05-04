@@ -1,10 +1,10 @@
 <p>
   <strong>Product:</strong>
-  FIXME
+  <%= Product.joins(:sales).where(id: @sale.product_id).pluck(:name).flatten.join('') %>
 </p>
 <p>
   <strong>Price:</strong>
-  FIXME
+  $<%= Product.joins(:sales).where(id: @sale.product_id).pluck(:price).flatten.join('') %>
 </p>
 <p>
   <strong>Quantity:</strong>

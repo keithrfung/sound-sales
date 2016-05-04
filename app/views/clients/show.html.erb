@@ -1,0 +1,42 @@
+<p>
+  <strong>Name:</strong>
+  <%= @client.name %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @client.phone %>
+</p>
+
+<p>
+  <strong>Address line 1:</strong>
+  <%= @client.address_line_1 %>
+</p>
+
+<p>
+  <strong>Address line 2:</strong>
+  <%= @client.address_line_2 %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @client.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @client.state %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @client.country %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @client.zipcode %>
+</p>
+
+<%= link_to 'Edit', edit_client_path(@client), class: "btn btn-primary" %>
+<%= link_to 'Cancel', clients_path, class: "btn btn-none" %>

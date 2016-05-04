@@ -1,0 +1,14 @@
+
+  <div class="col-md-12">
+    <%= form_for(:session, url: login_path) do |f| %>
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+      <div class="top-buffer"> 
+      <%= f.submit "Log in", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+
+

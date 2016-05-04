@@ -1,0 +1,40 @@
+<p>
+  <strong>Product:</strong>
+  <%= Product.joins(:sales).where(id: @sale.product_id).limit(1).pluck(:name).flatten.join('') %>
+</p>
+<p>
+  <strong>Price:</strong>
+  $<%= Product.joins(:sales).where(id: @sale.product_id).limit(1).pluck(:price).flatten.join('') %>
+</p>
+<p>
+  <strong>Quantity:</strong>
+  <%= @sale.quantity %>
+</p>
+
+<p>
+  <strong>Subtotal:</strong>
+  $<%= number_with_precision(@sale.subtotal, precision:2) %>
+</p>
+
+<p>
+  <strong>Tax:</strong>
+  <%= @sale.tax %>%
+</p>
+
+<p>
+  <strong>Total:</strong>
+  $<%= number_with_precision(@sale.total, precision:2) %>
+</p>
+
+<p>
+  <strong>Payment type:</strong>
+  <%= @sale.payment_type %>
+</p>
+
+<p>
+  <strong>Sale date:</strong>
+  <%= @sale.sale_date %>
+</p>
+
+<%= link_to 'Edit', edit_sale_path(@sale), class: "btn btn-primary" %>
+<%= link_to 'Back', sales_path, class: "btn btn-none" %>

@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            Ranking
+        </h1>
+    </div>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Name</th>
+      <th>Region</th>
+      <th>Total Sales</th>
+    </tr>
+  </thead>
+  <% @rankedUsers.each_with_index do |rankedUser, i| %>
+      <tr>
+        <td>
+          <% if i == 0 %>
+            <i class="fa fa-trophy" aria-hidden="true"></i>
+          <% else %>
+            <%= i+1 %>
+          <% end %>
+        </td>
+        <td><%= rankedUser.full_name %></td>
+        <td><%= rankedUser.region.nil? ? "N/A" : rankedUser.region.name %></td>
+        <td>$<%= number_with_precision(rankedUser.sales_total, precision:2) %></td>
+      </tr>
+    <% end %>
+  <tbody>
+   
+  </tbody>
+</table>
+
+

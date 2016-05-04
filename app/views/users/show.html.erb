@@ -1,0 +1,29 @@
+<p>
+  <strong>First name:</strong>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+<p>
+  <strong>Role:</strong>
+  <%= @user.role %>
+</p>
+<p>
+  <strong>Region:</strong>
+  <% if @user.region == nil %>
+      N/A
+  <% else %>
+      <%= @user.region.name %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user), class: "btn btn-primary" %>
+<%= link_to 'Back', users_path, class: "btn btn-none" %>

@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
+//= require bootstrap.min
+//= require plugins/morris/raphael.min
+//= require plugins/morris/morris.min
+//= require plugins/morris/morris-data

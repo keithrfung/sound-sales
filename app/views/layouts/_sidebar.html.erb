@@ -1,0 +1,111 @@
+<div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav side-nav">
+        <li>
+            <%= link_to dashboard_path do%>
+                        <i class="fa fa-fw fa-dashboard"></i> 
+                        Dashboard
+            <% end %>
+        </li>
+        <% if current_user.has_role?('Sales') || current_user.has_role?('Admin') %>
+            <li>
+                <a href="javascript:;" data-toggle="collapse" data-target="#sales"><i class="fa fa-fw fa-line-chart"></i> Sales <i class="fa fa-fw fa-caret-down"></i></a>
+                <ul id="sales" class="collapse">
+                    <li>
+                        <%= link_to new_sale_path do%>
+                            Add Sale
+                        <% end %>
+                    </li>
+                    <li>
+                        <%= link_to sales_path do%>
+                            View Sales
+                        <% end %>
+                    </li>
+                </ul>
+            </li>
+        <% end %>
+        <% if current_user.has_role?('Accounting') || current_user.has_role?('Admin') %>
+            <li>
+                <a href="javascript:;" data-toggle="collapse" data-target="#products"><i class="fa fa-fw fa-shopping-cart"></i> Products <i class="fa fa-fw fa-caret-down"></i></a>
+                <ul id="products" class="collapse">
+                    <li>
+                        <%= link_to new_product_path do%>
+                            Add Product
+                        <% end %>
+                    </li>
+                    <li>
+                        <%= link_to products_path do%>
+                            View Product
+                        <% end %>
+                    </li>
+                </ul>
+            </li>
+        <% end %>
+        <% if current_user.has_role?('Human Resources') || current_user.has_role?('Admin') %>
+            <li>
+                <a href="javascript:;" data-toggle="collapse" data-target="#users"><i class="fa fa-fw fa-users"></i> Users <i class="fa fa-fw fa-caret-down"></i></a>
+                <ul id="users" class="collapse">
+                    <li>
+                        <%= link_to new_user_path do%>
+                            Add User
+                        <% end %>
+                    </li>
+                    <li>
+                        <%= link_to users_path do%>
+                            View Users
+                        <% end %>
+                    </li>
+                </ul>
+            </li>
+        <% end %>
+        <% if current_user.has_role?('Accounting') || current_user.has_role?('Admin') || current_user.has_role?('Sales Manager') %>
+            <li>
+                <a href="javascript:;" data-toggle="collapse" data-target="#regions"><i class="fa fa-fw fa-map-marker"></i> Regions <i class="fa fa-fw fa-caret-down"></i></a>
+                <ul id="regions" class="collapse">
+                    <li>
+                        <%= link_to new_region_path do%>
+                            Add Region
+                        <% end %>
+                    </li>
+                    <li>
+                        <%= link_to regions_path do%>
+                            View Regions
+                        <% end %>
+                    </li>
+                </ul>
+            </li>
+        <% end %>
+        <% if current_user.has_role?('Accounting') || current_user.has_role?('Admin') %>
+            <li>
+                <a href="javascript:;" data-toggle="collapse" data-target="#clients"><i class="fa fa-fw fa-user"></i> Clients <i class="fa fa-fw fa-caret-down"></i></a>
+                <ul id="clients" class="collapse">
+                    <li>
+                        <%= link_to new_client_path do%>
+                            Add Clients
+                        <% end %>
+                    </li>
+                    <li>
+                        <%= link_to clients_path do%>
+                            View Clients
+                        <% end %>
+                    </li>
+                </ul>
+            </li>
+        <% end %>
+        <% if current_user.has_role?('Sales') || current_user.has_role?('Admin') %>
+            <li>
+                <%= link_to commissions_path do%>
+                    <i class="fa fa-fw fa-dollar"></i> 
+                    Commissions
+                <% end %>
+            </li>
+        <% end %>
+        <% if current_user.has_role?('Sales') || current_user.has_role?('Admin') %>
+            <li>
+                <%= link_to ranking_path do%>
+                        <i class="fa fa-fw fa-trophy"></i> 
+                        Ranking
+                    <% end %>
+            </li>
+        <% end %>
+    </ul>
+</div>

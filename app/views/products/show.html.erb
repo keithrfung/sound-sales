@@ -1,0 +1,22 @@
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  $<%= number_with_precision(@product.price, precision:2) %>
+</p>
+
+<p>
+  <strong>Commission rate:</strong>
+  <%= @product.commission_rate %>%
+</p>
+
+<%= link_to 'Edit', edit_product_path(@product), class: "btn btn-primary" %>
+<%= link_to 'Cancel', products_path, class: "btn btn-none" %>

@@ -19,43 +19,15 @@
   </thead>
 
   <tbody>
-    <% @commissions.each do |commission| %>
+    <% @sales.each do |sale| %>
       <tr>
-        <td>
-          <%= Sale.joins(:commission).where(id: commission.sale_id).pluck(:sale_date).flatten.join('') == nil ? "N/A" : Sale.joins(:commission).where(id: commission.sale_id).pluck(:sale_date).flatten.join('') %>
-        </td>
-        <td>
-          <%= Product.joins(:commission).where(id: commission.product_id).pluck(:name).flatten.join('') == nil ? "N/A" : Product.joins(:commission).where(id: commission.product_id).pluck(:name).flatten.join('') %>
-        </td>
-        <td>
-          $<%= Client.joins(:sales).where(id: commission.sale_id) == nil ? "N/A" : Client.joins(:sales).where(id: commission.sale_id).pluck(:name).flatten.join('') %>
-        </td>
-        <td>
-          $<%= Sale.joins(:commission).where(id: commission.sale_id).pluck(:total).flatten.join('') == nil ? "N/A" : Sale.joins(:commission).where(id: commission.sale_id).pluck(:total).flatten.join('') %>
-        </td>
-        <td><%= commission.amount %></td>
-        <td>
-          <%= link_to commission, class: 'btn btn-default btn-xs' do %>
-            <i class="fa fa-search" title="View" aria-hidden="true"></i>
-          <% end %>
-        </td>
-        <td>
-          <%= link_to edit_commission_path(commission), class: 'btn btn-default btn-xs' do %>
-            <i class="fa fa-pencil-square-o" title="Edit" aria-hidden="true"></i>
-          <% end %>
-        </td>
-        <td>
-          <%= link_to commission, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' do %>
-          <i class="fa fa-trash-o" title="Delete" aria-hidden="true"></i>
-          <% end %>
-        </td>
+        <td><%= sale.sale_date %></td>
+        <td><%= Product.find(sale.product_id).nil? ? "N/A" : Product.find(sale.product_id).name %></td>
+        <td><%= Client.find(sale.client_id).nil? ? "N/A" : Client.find(sale.client_id).name %></td>
+        <td>$<%= number_with_precision(sale.total, precision:2) %></td>
+        <td>$<%= number_with_precision(sale.commission, precision:2) %></td>
+        <td><%= sale.payment_type %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<!--<%= link_to new_commission_path, class: 'btn btn-primary' do%>
-Add
-<% end %>-->

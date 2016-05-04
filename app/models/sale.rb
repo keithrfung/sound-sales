@@ -6,7 +6,6 @@ class Sale < ActiveRecord::Base
 	belongs_to :client
 
   	has_one :product
-  	has_one :commission
 	  
 	accepts_nested_attributes_for :product
 	
@@ -25,8 +24,8 @@ class Sale < ActiveRecord::Base
     end
 	
 	def calculate
-		
 		self.subtotal = self.quantity * Product.find(product_id).price
 		self.total = (1 + tax / 100) * self.subtotal
+		self.commission = self.total * ( Product.find(product_id).commission_rate / 100 )
 	end
 end

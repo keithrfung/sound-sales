@@ -97,16 +97,25 @@ Region.create!(name: "Mistake6",
 Region.create!(name: "Mistake7",
                manager_id: 1)
 
-Product.create!(name: "Server",
-                description: "64GB RAM",
-                price: 3124.00,
-                commission_rate: 12.0)
+Product.create!(name: "Microsoft Word 2016",
+                description: "Spellchecking and Grammerz",
+                price: 100.00,
+                commission_rate: 10.0)
 
-Product.create!(name: "Firewall",
-                description: "SSL VPN",
-                price: 8200.00,
-                commission_rate: 18.0)
+Product.create!(name: "Microsoft Excel 2016",
+                description: "Edit zee tables",
+                price: 50.00,
+                commission_rate: 5.0)
 
+Product.create!(name: "Adobe Acrobat",
+                description: "View pdfs",
+                price: 75.00,
+                commission_rate: 5.0)
+                
+Product.create!(name: "WinZip",
+                description: "Not a free trial",
+                price: 10.00,
+                commission_rate: 100.0)
 
 Client.create!(name: "Allied Corporation",
                phone: "410-555-1212",
@@ -126,22 +135,6 @@ Client.create!(name: "Infotel Corporation",
                country: "USA",
                zipcode: "91720")
 
-
-Commission.create!(amount: 2634.16,
-                   sale_id: 1,
-                   product_id: 1)
-
-
-Sale.create!(quantity: 7,
-             subtotal: 21868.00,
-             tax: 5.0,
-             total: 23180.08,
-             payment_type: "Check",
-             sale_date: "2016-05-02 00:16:22",
-             user_id: 1,
-             client_id: 1,
-             product_id: 1,
-             commission_id: 1)
 
 
 

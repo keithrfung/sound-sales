@@ -141,7 +141,7 @@ Sale.create!(quantity: 7,
              user_id: 1,
              client_id: 1,
              product_id: 1,
-             commissions_id: 1)
+             commission_id: 1)
 
 
 
